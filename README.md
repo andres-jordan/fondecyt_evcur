@@ -2,7 +2,7 @@
 
 En este repositorio se encuentra un script para calcular el puntaje de la 
 evalaución curricular para el concurso FONDECYT regular 2017. ESTE SCRIPT NO ES OFICIAL,
-USELO A SU PROPIO RIESGO. El script se corre haciendo:
+USO BAJO SU PROPIO RIESGO Y RESPONSABILIDAD. El script se corre haciendo:
 
 ````shell 
 python formula.py
