@@ -33,5 +33,5 @@ PI_name='Jord'
 reemplazando por su apellido (o la fracción inicial de este que sea suficiente para un match único, esto 
 es útil para problemas con los acentos como en mi caso).
 
-El script ```optimizer.py``` encuentra el mejor set de 10 papers probando '''TODOS''' los subconjuntos de tamaño 10 del set de papers en el archivo ```bibcodes_opt.txt```, asi que su tiempo de ejecución escala rapidamente.
+El script ```optimizer.py``` encuentra el mejor set de 10 papers probando **TODOS** los subconjuntos de tamaño 10 del set de papers en el archivo ```bibcodes_opt.txt```, asi que su tiempo de ejecución escala rapidamente.
 
