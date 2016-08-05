@@ -23,7 +23,7 @@ archivo ```bibcodes*.txt``` se ven así:
 ...
 ````
 
-Ademas, debe modificar la línea de ```formula.py``` y ```optimize.py```
+Ademas, debe modificar la línea de ```formula.py``` y ```optimizer.py```
 que dice
 
 ````python
