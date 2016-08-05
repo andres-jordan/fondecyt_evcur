@@ -1,7 +1,7 @@
 # Scripts para calcular puntaje de la evaluacion curricular del FONDECYT regular 2017
 
 En este repositorio se encuentran dos script para calcular (```formula.py```) y 
-optimizar (```opimitzer.py```( el puntaje de la 
+optimizar (```opimitzer.py```) el puntaje de la 
 evalaución curricular para el concurso FONDECYT regular 2017. ESTOS SCRIPTS NO SON OFICIALES,
 USO BAJO SU PROPIO RIESGO Y RESPONSABILIDAD. Los scripts se corre haciendo:
 
