@@ -1,7 +1,7 @@
 # Scripts para calcular puntaje de la evaluacion curricular del FONDECYT regular 2017
 
 En este repositorio se encuentran dos script para calcular (```formula.py```) y 
-optimizar (```opimitzer.py```) el puntaje de la 
+optimizar (```optimizer.py```) el puntaje de la 
 evalaución curricular para el concurso FONDECYT regular 2017. ESTOS SCRIPTS NO SON OFICIALES,
 USO BAJO SU PROPIO RIESGO Y RESPONSABILIDAD. Los scripts se corre haciendo:
 
@@ -33,5 +33,5 @@ PI_name='Jord'
 reemplazando por su apellido (o la fracción inicial de este que sea suficiente para un match único, esto 
 es útil para problemas con los acentos como en mi caso).
 
-El script ```optimizer.py``` encuentra el mejor set de 10 papers probando **TODOS** los subconjuntos de tamaño 10 del set de papers en el archivo ```bibcodes_opt.txt```, asi que su tiempo de ejecución escala rapidamente.
+El script ```optimizer.py``` encuentra el mejor set de 10 papers probando **TODOS** los subconjuntos de tamaño 10 del set de papers en el archivo ```bibcodes_opt.txt```, asi que su tiempo de ejecución escala rapidamente con el número de papers. En caso que más de 25 papers esten presentes en ```bibcodes_opt.txt```, el script los restringe a 25 (para cambiar este valos se puede ajustar la variable ```max_n``` en el script).
 
