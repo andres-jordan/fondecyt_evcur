@@ -1,7 +1,11 @@
+from __future__ import print_function
 import ads
 from unidecode import unidecode
 from itertools import combinations
 import numpy as np
+import copy
+
+max_n = 25
 
 ##### bibcodes.txt has the bibcodes of the publications, one per line
 with open('bibcodes_opt.txt') as f:
@@ -29,8 +33,8 @@ N=10
 for b in bibcodes:
 	res = ads.SearchQuery(bibcode=b,fl=['year', 'author', 'citation_count', 'title'])
 	for paper in res:
-		print "Processing paper: "+ b
-		print 'Title: "'+unidecode(paper.title[0])+'"'
+		print("Processing paper: "+ b)
+		print('Title: "'+unidecode(paper.title[0])+'"')
 		yr = int(paper.year)
 		years = 2016 - yr
 		if (yr < 2011):
@@ -52,12 +56,31 @@ for b in bibcodes:
 				if (i > 2) and (i < 5):
 					l_i = 0.5
 		l_array.append(l_i)
-		print "\tP_i={0:4.2f} l_i={1:2.1f}".format(p_i,l_i)
+		print("\tP_i={0:4.2f} l_i={1:2.1f}".format(p_i,l_i))
 
 
 l_array = np.array(l_array)
 p_array = np.array(p_array)
 
+
+# Now we select a subset of maximum 20 papers to make the calculation 
+# in a reasonable time
+n_actual_papers = len(l_array)
+if (n_actual_papers > max_n):
+	# include all papers with leadership > 0
+	print("Restricting your list to {0:d} papers".format(max_n))
+	i_l = np.where(l_i > 0)
+	tmp_array = copy.copy(p_array)
+	tmp_array[i_l] = 5.1
+	idx = np.argsort(tmp_array)
+	l_array = l_array[idx][-max_n:]
+	p_array = p_array[idx][-max_n:]
+	#bibcodes = bibcodes[idx][max_n:]
+	tmp=[]
+	for k in range(max_n):
+		tmp.append(bibcodes[idx[-max_n+k + n_actual_papers]])
+	bibcodes=tmp
+	num_pubs = max_n
 
 def score(l_array,p_array,I):
 	liderazgo = l_array[I].sum()
@@ -80,8 +103,9 @@ for ind in range(ni):
 		best_score = try_score
 		I_best = II
 
-print "\nBest set of papers:"
+print("\nBest set of papers:")
 for i in I_best:
-	print bibcodes[i]
+	print(bibcodes[i])
 
-print "\nBest score:", best_score
+print("\nBest score:", best_score)
+
