@@ -1,6 +1,6 @@
-# Scripts para calcular puntaje de la evaluacion curricular del FONDECYT regular 2017/2020
+# Scripts para calcular puntaje de la evaluacion curricular del FONDECYT regular 2017/2021
 
-En este repositorio se encuentran dos script para calcular (```formula(_2020).py```) y 
+En este repositorio se encuentran dos script para calcular (```formula(2020).py```) y 
 optimizar (```optimizer.py```) el puntaje de la 
 evalaución curricular para el concurso FONDECYT regular 2017. ESTOS SCRIPTS NO SON OFICIALES,
 USO BAJO SU PROPIO RIESGO Y RESPONSABILIDAD. Los scripts se corre haciendo:
